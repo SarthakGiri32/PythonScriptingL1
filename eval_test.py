@@ -6,7 +6,8 @@ def function_creator():
     expr = input("Enter the expression(in terms of x): ")
     x = int(input("Enter the value of x: "))
     y = eval(expr)
-    print("y=", y)
+    return y
 
 
-function_creator()
+result = function_creator()
+print("y=", result)
