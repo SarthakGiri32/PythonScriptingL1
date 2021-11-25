@@ -9,10 +9,13 @@ def function_creator(safedt):
     expr = input("Enter the expression(in terms of x): ")
     x = int(input("Enter the value of x: "))
     safedt['x'] = x
-    print(safedt)
+    # print(safedt)
     # y = eval(expr, globaldt)
-    y = eval(expr, {"__builtins__": None}, safedt)
-    print("y=", y)
+    try:
+        y = eval(expr, {"__builtins__": None}, safedt)
+        print("y=", y)
+    except TypeError:
+        print("ERROR: function is not accessible for x")
 
 
 safe_list = ['acos', 'asin', 'atan', 'atan2', 'ceil', 'cos',
